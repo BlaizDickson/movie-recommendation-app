@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/movies', require('./routes/movieRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));  // Add this line
 
 // Test route
 app.get('/', (req, res) => {
@@ -27,8 +29,8 @@ app.get('/', (req, res) => {
         version: '1.0.0',
         endpoints: {
             auth: '/api/auth',
-            movies: '/api/movies (coming soon)',
-            users: '/api/users (coming soon)'
+            movies: '/api/movies',
+            users: '/api/users'
         }
     });
 });
