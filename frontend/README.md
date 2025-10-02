@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Movie Recommendation App - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-based frontend for the Movie Recommendation App with full TMDB integration and user features.
+
+## Features
+
+- ✅ User Authentication (Login/Register)
+- ✅ Movie Browsing (Popular, Top Rated, Upcoming, Now Playing)
+- ✅ Movie Search
+- ✅ Detailed Movie Pages
+- ✅ Add to Favorites
+- ✅ Watchlist Management
+- ✅ Movie Reviews & Ratings
+- ✅ User Profile Dashboard
+- ✅ Responsive Design
+- ✅ Protected Routes
+
+## Tech Stack
+
+- **Framework:** React 18
+- **Routing:** React Router v6
+- **Styling:** Tailwind CSS
+- **HTTP Client:** Axios
+- **State Management:** React Context API
+
+## Installation
+# Install dependencies
+npm install
+
+# Create .env file
+cp .env.example .env
+
+# Start development server
+npm start
+## Project Structure
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.js           # Navigation bar
+│   │   └── MovieCard.js        # Movie card component
+│   ├── context/
+│   │   └── AuthContext.js      # Authentication state management
+│   ├── pages/
+│   │   ├── Home.js             # Landing page
+│   │   ├── Login.js            # Login page
+│   │   ├── Register.js         # Registration page
+│   │   ├── Movies.js           # Movie browsing page
+│   │   ├── Search.js           # Search results page
+│   │   ├── MovieDetails.js     # Movie details page
+│   │   ├── Favorites.js        # User favorites page
+│   │   ├── Watchlist.js        # User watchlist page
+│   │   └── Profile.js          # User profile page
+│   ├── services/
+│   │   └── api.js              # API service layer
+│   ├── App.js                  # Main app component
+│   └── index.js                # Entry point
+├── .env                        # Environment variables
+├── tailwind.config.js          # Tailwind configuration
+└── package.json                # Dependencies
+
+## Environment Variables
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
 
 ## Available Scripts
 
-In the project directory, you can run:
+npm start - Start development server
+npm build - Build for production
+npm test - Run tests
 
-### `npm start`
+## Features Overview
+# Authentication
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-JWT-based authentication
+-Protected routes
+-Persistent login with -localStorage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Movie Discovery
 
-### `npm test`
+Browse by categories
+Search movies by title
+View detailed movie information
+See cast, crew, and similar movies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# User Features
 
-### `npm run build`
+Save favorite movies
+Create watchlist
+Rate and review movies
+View personal statistics
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
+Ready for deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Netlify
+Vercel
+AWS Amplify
+GitHub Pages (with hash routing)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Version: 1.0.0
+Built with: React + Tailwind CSS

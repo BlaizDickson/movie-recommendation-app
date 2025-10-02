@@ -1,4 +1,5 @@
 
+
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -12,21 +13,31 @@ connectDB();
 
 const app = express();
 
+// CORS configuration for production
+const corsOptions = {
+    origin: process.env.NODE_ENV === 'production' 
+        ? ['https://your-app-name.netlify.app'] // We'll update this after frontend deployment
+        : 'http://localhost:3000',
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/movies', require('./routes/movieRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));  // Add this line
+app.use('/api/users', require('./routes/userRoutes'));
 
 // Test route
 app.get('/', (req, res) => {
     res.json({ 
         message: 'Movie Recommendation API is running!',
         version: '1.0.0',
+        environment: process.env.NODE_ENV,
         endpoints: {
             auth: '/api/auth',
             movies: '/api/movies',
@@ -48,6 +59,6 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
 });
 
