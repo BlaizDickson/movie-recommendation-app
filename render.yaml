@@ -26,8 +26,6 @@ services:
   - type: web
     name: movie-recommendation-frontend
     runtime: static
-    region: oregon
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/build
     envVars:
