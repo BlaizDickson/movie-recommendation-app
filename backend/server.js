@@ -16,7 +16,10 @@ const app = express();
 // CORS configuration for production
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production' 
-        ? ['https://your-app-name.netlify.app'] // We'll update this after frontend deployment
+        ? [
+            process.env.FRONTEND_URL,
+            /\.onrender\.com$/  // Allow all Render domains
+          ]
         : 'http://localhost:3000',
     credentials: true,
     optionsSuccessStatus: 200
@@ -61,4 +64,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
 });
-

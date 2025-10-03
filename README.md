@@ -129,21 +129,34 @@ POST /api/users/reviews - Add/update review
 DELETE /api/users/reviews/:movieId - Delete review
 
 ## 🚀 Deployment
-Backend (Render/Heroku)
 
-Create account on Render or Heroku
-Connect GitHub repository
-Set environment variables
-Deploy
+This app is configured for easy deployment on Render using the included `render.yaml` blueprint.
 
-Frontend (Netlify/Vercel)
+### Quick Deploy to Render
 
-Create account on Netlify or Vercel
-Connect GitHub repository
-Set build command: npm run build
-Set publish directory: build
-Add environment variables
-Deploy
+1. **Prerequisites**:
+   - MongoDB Atlas database (connection string)
+   - TMDB API key
+   - GitHub repository pushed
+
+2. **Deploy**:
+   - Go to [Render Dashboard](https://dashboard.render.com)
+   - Click "New +" → "Blueprint"
+   - Connect your GitHub repository
+   - Set environment variables when prompted
+   - Click "Apply"
+
+3. **Detailed Instructions**:
+   - See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for step-by-step instructions
+   - Use [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md) to track your progress
+
+### Manual Deployment
+
+If you prefer manual setup or want to use other platforms:
+- **Backend**: Render, Heroku, Railway, or any Node.js hosting
+- **Frontend**: Render, Netlify, Vercel, or any static hosting
+
+See the deployment guide for detailed instructions.
 
 ## 👤 Author
 Bakeung Dickson
@@ -153,4 +166,3 @@ Bakeung Dickson
 
 TMDB for the movie API
 Tailwind CSS for the styling framework
-
